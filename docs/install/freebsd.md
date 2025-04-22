@@ -19,6 +19,6 @@ import ArchiveAccess from './includes/archiveaccess.md';
 
 ## Permissions
 
-On FreeBSD the app runs as user `nobody`. That's not very good and will probably change in the future.
-If you know how to change it, please
-[let me know](https://github.com/Unpackerr/unpackerr/issues/new) so we can update this page.
+On FreeBSD the app runs as user `unpackerr`.
+The username is hard coded in [the rc file](https://github.com/Unpackerr/unpackerr/blob/main/init/bsd/freebsd.rc.d).
+If you wish to change the user, edit the rc file. This process will change and get better in the future.
