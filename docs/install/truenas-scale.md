@@ -24,4 +24,6 @@ Ensure the details are correct for your TrueNAS instance (i.e. the relevant dire
 
 ## TrueNAS Custom App
 
-There may be a way to install unpackerr directly without the use of a container manager. If you work that out, please edit this page so others can benefit from your tribulations.
+There may be a way to install unpackerr directly without the use of a container manager. 
+If you work that out, please [edit this page](https://github.com/Unpackerr/unpackerr.github.io/blob/main/docs/install/truenas-scale.md) 
+so others can benefit from your tribulations.
