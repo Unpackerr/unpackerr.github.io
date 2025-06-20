@@ -17,7 +17,7 @@ reside. Read more about that on the [Docker page](docker#folder-watcher).
 ## Instructions Available
 
 - [Docker](/docs/install/docker): [Compose](/docs/install/compose),
-    [unRAID](/docs/install/unraid), [TrueNAS Scale](/docs/install/truenas-scale)
+    [unRAID](/docs/install/unraid), [TrueNAS Community Edition](/docs/install/truenas-community-edition)
 - [FreeBSD](/docs/install/freebsd)
 - [Linux: with root](/docs/install/linux), [without root / seedbox](/docs/install/seedbox)
 - [macOS](/docs/install/macos)
