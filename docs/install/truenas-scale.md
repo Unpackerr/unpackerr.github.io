@@ -10,8 +10,6 @@ description: Install Unpackerr on TrueNAS Scale using TrueCharts.
 
 ## TrueCharts
 
-This no longer exists, and these directions were removed.
-
 ## Portainer
 
 On TrueNAS Scale ElectricEel and later the use of docker containers is supported. To simplify installation, install a container manager such as Portainer or Dockge from the inbuilt application catalogue. This guide is based on the usage of Portainer.
