@@ -8,8 +8,6 @@ description: Install Unpackerr on a Linux server without root.
 
 import ArchiveAccess from './includes/archiveaccess.md';
 
-# Seedbox Install
-
 **These directions explain how to install Unpackerr on your linux shell without root.**
 
 1. Download a binary from the [latest release](https://github.com/Unpackerr/unpackerr/releases/latest).
