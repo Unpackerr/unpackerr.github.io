@@ -7,7 +7,7 @@ jobs:
     name: Build Content
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v5
+      - uses: actions/checkout@v6
       - uses: codespell-project/actions-codespell@v2
         with:
           check_hidden: true
@@ -17,9 +17,9 @@ jobs:
         with:
           path: docs
       - uses: actions/setup-go@v6
-      - uses: actions/setup-node@v4
+      - uses: actions/setup-node@v6
         with:
-          node-version: 22.x
+          node-version: 24.x
           cache: yarn
       - name: Install Dependencies
         run: yarn install --frozen-lockfile
