@@ -9026,11 +9026,7 @@ webpack@^5.88.1, webpack@^5.95.0:
     schema-utils "^4.3.3"
     tapable "^2.3.0"
     terser-webpack-plugin "^5.3.16"
-<<<<<<< HEAD
-    watchpack "^2.5.1"
-=======
     watchpack "^2.4.4"
->>>>>>> b3ad146e987abefbca6a25895951d7c1a41e92f4
     webpack-sources "^3.3.3"
 
 webpackbar@^6.0.1:
