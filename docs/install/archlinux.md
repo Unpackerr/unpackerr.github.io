@@ -9,8 +9,6 @@ description: Install Unpackerr on an Arch Linux server.
 import ArchiveAccess from './includes/archiveaccess.md';
 import Permissions from './includes/linuxpermissions.md';
 
-# Arch Linux Install
-
 :::info Root Access
 This installation method requires root. If you don't have root on your shell,
 then check out the <a href="/docs/install/seedbox">non-root directions</a>.

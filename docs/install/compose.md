@@ -9,8 +9,6 @@ description: Install Unpackerr with Docker Compose!
 import ConfigFile from './includes/dockerconfigfile.md';
 import DataMount from './includes/dockerdatamount.md';
 
-# Compose Install
-
 - Copy the [example docker-compose.yml](https://github.com/Unpackerr/unpackerr/blob/main/examples/docker-compose.yml)
   from the repo or [generate one](https://notifiarr.com/unpackerr).
 - Update the docker-compose.yml file with your environment variable values for your installation.

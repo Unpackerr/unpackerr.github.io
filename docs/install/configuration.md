@@ -98,6 +98,7 @@ You may store any string parameter (except time intervals) into a separate file
 by setting the value to `filepath:/path/to/file.txt`. In other words, if you want
 your Radarr API key to be read from a separate file, instead of storing it directly
 in the config file or environment variables you can do this:
+
 ```json
 [[radarr]]
   url = "https://some.url/radarr"
@@ -105,6 +106,7 @@ in the config file or environment variables you can do this:
 ```
 
 Or if using environment variables:
+
 ```shell
 UN_RADARR_0_API_KEY=filepath:/etc/secrets/radarr.txt
 ```
