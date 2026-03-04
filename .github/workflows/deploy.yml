@@ -3,20 +3,33 @@ name: Deploy to GitHub Pages
 on:
   push:
     branches: [main]
-
+  workflow_dispatch:
+    inputs:
+      unpackerr_branch:
+        description: "The branch to read unpackerr's definitions.yml from"
+        required: true
+        default: "main"
+      branch:
+        description: "The local branch to deploy from"
+        required: true
+        default: "main"
 jobs:
   deploy:
     name: Deploy to GitHub Pages
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v6
+        with:
+          ref: ${{ inputs.branch || 'main' }}
       - uses: actions/setup-node@v6
         with:
-          node-version: 24.x
+          node-version: latest
           cache: yarn
       - name: Install Dependencies
         run: yarn install --frozen-lockfile
       - name: Build website
+        env:
+          UNPACKERR_BRANCH: ${{ inputs.unpackerr_branch || 'main' }}
         run: yarn build
 
       # Popular action to deploy to GitHub Pages:
@@ -27,4 +40,3 @@ jobs:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           # Build output to publish to the `gh-pages` branch:
           publish_dir: build
-
