@@ -16,7 +16,7 @@ jobs:
         uses: actionshub/markdownlint@main
         with:
           path: docs
-      - uses: actions/setup-go@v6
+      - uses: actions/setup-go@v7
       - uses: actions/setup-node@v6
         with:
           node-version: 24.x
