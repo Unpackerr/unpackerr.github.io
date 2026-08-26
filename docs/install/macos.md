@@ -1,14 +1,12 @@
 ---
 id: macos
-title: MacOS
+title: macOS
 pagination_prev: install/choosemethod
 pagination_next: install/configuration
 description: Install Unpackerr on a macOS system.
 ---
 
 import ArchiveAccess from './includes/archiveaccess.md';
-
-<ArchiveAccess />
 
 ## Universal Binary App
 
@@ -21,3 +19,5 @@ import ArchiveAccess from './includes/archiveaccess.md';
 1. Click the menu bar icon again and select `Quit`. Then open the app again.
 1. View the logs by clicking the menu bar icon and `Logs` -> `View`.
 1. You can add it to `Login Items` to run it automatically when you login.
+
+<ArchiveAccess />

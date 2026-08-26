@@ -18,7 +18,7 @@ and [example config](https://github.com/Unpackerr/unpackerr/blob/main/examples/u
 
 ## Config
 
-- Setting a log file is strongly recommend. This makes it much easier to troubleshoot problems.
+- Setting a log file is strongly recommended. This makes it much easier to troubleshoot problems.
 - To use a config file in Docker, mount `/config` to the container and Unpackerr will write a config file.
   - Update the new file at `/config/unpackerr.conf` and restart the container.
 - When using a config file you must uncomment at minimum the `[[header]]` <font color="gray">
@@ -42,7 +42,7 @@ add another `[[header]]` <font color="gray">ex. `[[sonarr]]`</font> and the
 `url`/`api_key`/etc under it. When adding a second instance to the __environment
 variables__, you must increment the `0` to a `1`. And to a `2` if you have 3
 instances. There is no limit to the number of supported instances. This notation
-works for all starr apps, folders, command hooks, and web hooks.
+works for all Starr apps, folders, command hooks, and webhooks.
 
 <details>
   <summary>Config examples with multiple instances.</summary>
@@ -121,12 +121,9 @@ _<font color="gray">This feature was added in Unpackerr v0.14.0.</font>_
 
 ## Event IDs
 
-Event IDs are needed/used in command hooks and webhooks.
-
-`0` = all, `1` = queued, `2` = extracting, `3` = extract failed, `4` = extracted,
-`5` = imported, `6` = deleting, `7` = delete failed, `8` = deleted, `9` = nothing extracted
-
-The 'nothing extracted' event (9) only fires for the folder watcher, not starr apps.
+Command hooks and webhooks use numeric event IDs; those settings list them.
+`0` sends all events. Event `9` (nothing extracted) only fires for the folder
+watcher, not Starr apps.
 
 ---
 

@@ -40,8 +40,8 @@ The following content was provided by a community member, [IamGimli](https://git
 If you want unpackerr to run automatically upon Windows boot,
 without a user needing to be logged-on, follow these instructions:
 
-Download and configure unpackerr according to the instructions on the
-[main page](https://github.com/davidnewhall/unpackerr).
+Download and configure unpackerr according to the instructions
+[above](#windows-installation).
 Make sure unpackerr runs without error messages in the logs before you continue.
 Once you've confirmed that unpackerr is properly configured, close it by
 right-clicking its icon in the taskbar and selecting `Quit`.
@@ -77,8 +77,8 @@ Windows Registry Editor Version 5.00
 "FailureActionsOnNonCrashFailures"=dword:00000001
 
 [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\unpackerr-Service\Parameters]
-"AppDirectory"="C:\\Program Files\\unpackerr"
-"Application"="C:\\Program Files\\unpackerr\\unpackerr.amd64.exe"
+"AppDirectory"="C:\\ProgramData\\unpackerr"
+"Application"="C:\\ProgramData\\unpackerr\\unpackerr.amd64.exe"
 "AppParameters"=""
 
 [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\unpackerr-Service\Parameters\AppExit]
@@ -87,9 +87,10 @@ Windows Registry Editor Version 5.00
 
 Replace **accountname** with the name of the local user account that you want
 unpackerr to run under. Make sure that account has all the permissions required
-to access to all of the paths that unpackerr will use. Also make sure that the
-"AppDirectory" and "Application" fields point to the location where you installed
-unpackerr, making sure to double up the backslashes in the path.
+to access all of the paths that unpackerr will use. Also make sure that the
+"AppDirectory" and "Application" fields match the location where you installed
+unpackerr (`C:\ProgramData\unpackerr` in the steps above), doubling the
+backslashes in the path.
 
 Save the file and then double-click it. You'll get a warning that importing
 registry keys could harm your system, click "Yes".

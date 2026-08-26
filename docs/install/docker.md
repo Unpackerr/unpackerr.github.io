@@ -23,8 +23,8 @@ GoLift software has a [Docker Open Source Sponsorship](https://docs.docker.com/t
 That means there are **no pull limits for any [`golift/*` image on Docker Hub](https://hub.docker.com/u/golift).**
 Even if you're not logged in.
 
-This project builds automatically in [Docker Cloud](https://hub.docker.com/r/golift/unpackerr) and creates
-[ready-to-use multi-architecture images](https://hub.docker.com/r/golift/unpackerr/tags) images.
+This project builds automatically on [Docker Hub](https://hub.docker.com/r/golift/unpackerr) and creates
+[ready-to-use multi-architecture images](https://hub.docker.com/r/golift/unpackerr/tags).
 The `latest` tag is always a [tagged release on GitHub](https://github.com/Unpackerr/unpackerr/releases).
 
 - Pull the DockerHub image with this command:
@@ -49,7 +49,7 @@ The `latest` tag is always a [tagged release on GitHub](https://github.com/Unpac
 ```shell
 docker pull golift/unpackerr
 docker run -d -v /mnt/HostDownloads:/downloads \
-  -e "UN_SONARR_0_URL=http://localhost:8989" \
+  -e "UN_SONARR_0_URL=http://sonarr:8989" \
   -e "UN_SONARR_0_API_KEY=kjsdkasjdaksdj" golift/unpackerr
 docker logs <container id from docker run>
 ```
@@ -84,7 +84,7 @@ The `golift` docker container runs as uid 0 (root) by default. This is probably 
 Make sure to set the correct uid and gid with the `--user` parameter. Example:
 
 ```bash
-# This commands runs golift/unpackerr with UID 1000 and GID 100.
+# This command runs golift/unpackerr with UID 1000 and GID 100.
 docker run --user 1000:100 -d -v /mnt/data:/data -v /mnt/config:/config golift/unpackerr
 ```
 
@@ -97,12 +97,12 @@ Find examples in the [Docker Compose instruction](compose).
 ### Hotio
 
 The primary difference between the golift and hotio containers is how you set the uid and gid.
-Hotio does not user the `--user` parameter and instead sets the UID and GID with environment
+Hotio does not use the `--user` parameter and instead sets the UID and GID with environment
 variables. *Passing the `--user` parameter to the hotio container will render it inoperable.*
 Pass the `PUID` and `PGID` environment variables when using hotio's container. Example:
 
 ```bash
-# This commands runs hotio/unpackerr with UID 1000 and GID 100.
+# This command runs hotio/unpackerr with UID 1000 and GID 100.
 docker run -e PUID=1000 -e PGID=100 -d -v /mnt/data:/data -v /mnt/config:/config hotio/unpackerr
 ```
 

@@ -8,7 +8,7 @@ description: Install Unpackerr on a Linux server without root.
 
 import ArchiveAccess from './includes/archiveaccess.md';
 
-**These directions explain how to install Unpackerr on your linux shell without root.**
+**These directions explain how to install Unpackerr on your Linux shell without root.**
 
 1. Download a binary from the [latest release](https://github.com/Unpackerr/unpackerr/releases/latest).
   The `unpackerr.amd64.linux.gz` file is almost certainly what you want to grab,
@@ -18,7 +18,7 @@ import ArchiveAccess from './includes/archiveaccess.md';
 1. Download the [example config file](https://github.com/Unpackerr/unpackerr/blob/main/examples/unpackerr.conf.example),
    or [generate one](https://notifiarr.com/unpackerr).
 1. Edit config file to suit your needs: `nano unpackerr.conf`
-1. Put both on your Linux shell server, in an `~/unapckerr/` folder.
+1. Put both on your Linux shell server, in an `~/unpackerr/` folder.
 1. Run Unpackerr in the background, `screen` is the easiest way to do so.
 
 <ArchiveAccess />
@@ -60,7 +60,7 @@ wget https://raw.githubusercontent.com/Unpackerr/unpackerr/$TAG/examples/unpacke
 chmod 0600 $HOME/unpackerr/unpackerr.conf
 
 # This opens nano, so you may edit unpackerr.conf to suit your needs.
-# Set a starr app url and api key, and a log file at minimum.
+# Set a Starr app url and api key, and a log file at minimum.
 # "~/unpackerr/unpackerr.log" is a good path for a log file.
 nano $HOME/unpackerr/unpackerr.conf
 
