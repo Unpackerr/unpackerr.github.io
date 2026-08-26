@@ -16,7 +16,7 @@ on unRAID. Install it from the `Apps` page; see screenshot that follows.
 
 On the install screen, fill in the `URL` and `API_KEY` for one or more of the Starr apps.
 
-:::note Multiple Instances
+:::note[Multiple Instances]
 If you have, for instance, two Radarrs, you can simply add two new variables:
 `UN_RADARR_1_URL` and `UN_RADARR_1_API_KEY`. If you have 3, then increase
 the `1` to a `2` and so on. This works for all starr apps, folders, webhooks and command
@@ -28,7 +28,7 @@ It's recommended to put it in your downloads location, and an example follows.
 
 ![Bind volume for Unpackerr log file](/img/screenshots/unraid/bindvolume.png "bind volume")
 
-:::tip Download Location
+:::tip[Download Location]
 The most common misconfiguration on unRAID, by far, and it's not even a close second, is
 having the correct path mounted for your download location. As you see in the screenshot above,
 it's set to `host:/mnt/user/downloads` and `container:/downloads`. This is almost certainly
