@@ -23,7 +23,7 @@ reside. Read more about that on the [Docker page](docker#folder-watcher).
 - [macOS](/docs/install/macos)
 - [Windows](/docs/install/windows)
 
-:::tip CPU Hog
+:::tip[CPU Hog]
 Unpackerr uses a lot CPU while extracting, and tends not to work well when
 running on smaller systems like Synology NAS devices. Running Unpackerr on
 a system with a large CPU is ideal to avoid system performance degradation.

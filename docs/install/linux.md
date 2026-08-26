@@ -17,7 +17,7 @@ Use the command (script) below to automatically install the GoLift repo and
 unpackerr in one command. If your system does not use `yum` (`rpm`) or `apt`
 (`dpkg`) then these directions are not for you.
 
-:::info Root Access
+:::info[Root Access]
 This installation method requires root. If you don't have root on your shell,
 then check out the <a href="/docs/install/seedbox">non-root directions</a>.
 :::

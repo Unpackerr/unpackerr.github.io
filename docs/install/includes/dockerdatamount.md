@@ -1,4 +1,4 @@
-:::tip Data Mount
+:::tip[Data Mount]
 The `/data` or `/downloads` mount you use for Starr apps should be set the same for Unpackerr.
 Using the same mount path keeps consistency and makes troubleshooting Unpackerr easier.
 Most importantly, it allows Unpackerr to find your files.
