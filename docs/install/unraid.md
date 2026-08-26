@@ -1,8 +1,6 @@
 ---
 id: unraid
 title: unRAID
-pagination_prev: install/docker
-pagination_next: install/configuration
 description: Install Unpackerr on your unRAID server!
 ---
 

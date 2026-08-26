@@ -1,8 +1,6 @@
 ---
 id: faq
 title: FAQs
-pagination_prev: introduction
-pagination_next: unpackerr/troubleshooting
 description: Frequently asked questions about Unpackerr installation and troubleshooting.
 ---
 

@@ -1,8 +1,6 @@
 ---
 id: configuration
 title: Application Configuration
-pagination_prev: install/choosemethod
-pagination_next: unpackerr/troubleshooting
 description: Unpackerr configurations explained.
 ---
 

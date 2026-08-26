@@ -1,8 +1,6 @@
 ---
 id: xt
 title: eXtractor Tool
-pagination_prev: null
-pagination_next: null
 description: Recursively decompress archives
 ---
 

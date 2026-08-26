@@ -1,8 +1,6 @@
 ---
 id: introduction
 title: Introduction
-pagination_prev: null
-pagination_next: install/choosemethod
 description: Introduction and explanation of Unpackerr.
 ---
 
