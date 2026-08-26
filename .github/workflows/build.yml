@@ -14,11 +14,6 @@ jobs:
         with:
           check_hidden: true
           path: docs
-      - name: Run Markdown Lint
-        uses: DavidAnson/markdownlint-cli2-action@21c1be1b93ad9ed58fa840aacc3f279cde2a72ff # v24.2.0
-        with:
-          globs: |
-            docs/**/*.md
       - uses: actions/setup-go@b7ad1dad31e06c5925ef5d2fc7ad053ef454303e # v7.0.0
         with:
           go-version: stable
@@ -28,5 +23,7 @@ jobs:
           cache: yarn
       - name: Install Dependencies
         run: yarn install --frozen-lockfile
+      - name: Lint Markdown
+        run: yarn lint
       - name: Build website
         run: yarn build
