@@ -121,9 +121,12 @@ _<font color="gray">This feature was added in Unpackerr v0.14.0.</font>_
 
 ## Event IDs
 
-Command hooks and webhooks use numeric event IDs; those settings list them.
-`0` sends all events. Event `9` (nothing extracted) only fires for the folder
-watcher, not Starr apps.
+Event IDs are used in command hooks and webhooks.
+
+`0` = all, `1` = queued, `2` = extracting, `3` = extract failed, `4` = extracted,
+`5` = imported, `6` = deleting, `7` = delete failed, `8` = deleted, `9` = nothing extracted
+
+The `nothing extracted` event (`9`) only fires for the folder watcher, not Starr apps.
 
 ---
 

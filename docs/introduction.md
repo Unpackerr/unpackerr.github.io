@@ -51,13 +51,20 @@ too much? Let me know what knobs you need.
 [Open a request](https://github.com/Unpackerr/unpackerr/issues/new)!
 
 Unpackerr uses [xtractr](https://github.com/golift/xtractr) and decompresses archives
-of these common types:
+of these types:
 
-- `rar`, `tar`, `tgz`, `gz`, `zip`, `7z`, `bz2`, `tbz2`, `iso`
-- Multi-file archives are supported with RAR and 7ZIP formats.
-- Password protected archives are supported with RAR and 7ZIP formats.
+- Zip: `zip`
+- RAR: `rar`, `r00`
+- 7-Zip: `7z`, `7z.001`
+- tar: `tar`, `tar.gz`, `tgz`, `tar.bz2`, `tbz`, `tbz2`, `tar.xz`, `txz`, `tar.z`, `tz`, `tlz`
+- gzip / bzip2 / xz / zstd: `gz`, `gzip`, `bz2`, `xz`, `zst`, `zstd`
+- Other compressors: `lz4`, `lz`, `lzip`, `lzma`, `lzma2`, `z`, `br`, `brotli`, `s2`, `snappy`, `sz`, `zlib`, `zz`
+- Packages and images: `iso`, `cpio`, `cpio.gz`, `cpgz`, `ar`, `deb`, `rpm`
+- Cue sheets (FLAC splits): `cue`, `cue.txt`
+- Multi-file archives are supported with RAR and 7-Zip.
+- Password protected archives are supported with RAR and 7-Zip.
 - Archives are detected by the file extension. ISO is disabled by default
-  (`extract_isos`). Many more extensions (xz, zst, lz4, and others) are also supported.
+  (`extract_isos`).
 
 ## Starr Logic
 
