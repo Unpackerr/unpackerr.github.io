@@ -107,9 +107,18 @@ JSON and YAML use camelCase for some keys (`excludeSuffix`, `debugLog`,
 
 ## Formats
 
-Same engine as Unpackerr: zip, rar (including `.r00`), 7z, tar, gz, bz2, xz,
-zst, iso, and others. `xt -v` prints every extension xtractr currently
-recognizes.
+Same [xtractr](https://github.com/golift/xtractr) engine as Unpackerr. Detected by
+file extension:
 
-ISO extraction is always available in `xt`. Unpackerr's `extract_isos` setting
-does not apply here.
+- Zip: `zip`
+- RAR: `rar`, `r00`
+- 7-Zip: `7z`, `7z.001`
+- tar: `tar`, `tar.gz`, `tgz`, `tar.bz2`, `tbz`, `tbz2`, `tar.xz`, `txz`, `tar.z`, `tz`, `tlz`
+- gzip / bzip2 / xz / zstd: `gz`, `gzip`, `bz2`, `xz`, `zst`, `zstd`
+- Other compressors: `lz4`, `lz`, `lzip`, `lzma`, `lzma2`, `z`, `br`, `brotli`, `s2`, `snappy`, `sz`, `zlib`, `zz`
+- Packages and images: `iso`, `cpio`, `cpio.gz`, `cpgz`, `ar`, `deb`, `rpm`
+- Cue sheets (FLAC splits): `cue`, `cue.txt`
+
+Multi-file and password-protected archives work with RAR and 7-Zip.
+ISO extraction is always available in `xt`; Unpackerr's `extract_isos` setting does
+not apply here. `xt -v` prints the extension list from the binary you have.
