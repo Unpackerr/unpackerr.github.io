@@ -1,7 +1,7 @@
 ```
 MIT LICENSE.
 Copyright (c) 2018-2022 David Newhall II
-Copyright (c) 2023-2024 Go Lift - Building Strong Go Tools
+Copyright (c) 2023-2026 Go Lift Technologies, LLC
 
 Permission is hereby granted, free of charge, to any person obtaining
 a copy of this software and associated documentation files (the

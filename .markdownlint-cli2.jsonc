@@ -1,0 +1,7 @@
+{
+  "ignores": [
+    "docs/install/generated/**",
+    "node_modules/**",
+    "build/**"
+  ]
+}
