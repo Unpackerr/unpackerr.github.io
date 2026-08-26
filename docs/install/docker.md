@@ -40,7 +40,7 @@ This image is effectively identical to the DockerHub version; use whichever you 
 The `latest` tag is always a [tagged release on GitHub](https://github.com/Unpackerr/unpackerr/releases).
 
 - Pull the GHCR image with this command:
-  ```
+  ```shell
   docker pull ghcr.io/unpackerr/unpackerr:latest
   ```
 
