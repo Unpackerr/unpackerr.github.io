@@ -21,6 +21,8 @@ reside. Read more about that on the [Docker page](docker#folder-watcher).
 - [macOS](/docs/install/macos)
 - [Windows](/docs/install/windows)
 
+Need a one-shot command-line extractor instead of a daemon? See [xt](/docs/xt).
+
 :::tip[CPU Hog]
 Unpackerr uses a lot of CPU while extracting, and tends not to work well when
 running on smaller systems like Synology NAS devices. Running Unpackerr on

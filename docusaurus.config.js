@@ -76,6 +76,11 @@ const config = {
             label: 'GitHub',
             position: 'right',
           },
+          {
+            to: 'docs/xt',
+            label: 'xt',
+            position: 'right',
+          },
         ],
       },
       footer: {
