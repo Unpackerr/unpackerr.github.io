@@ -10,7 +10,7 @@ import ArchiveAccess from './includes/archiveaccess.md';
 
 # Windows Installation
 
-:::tip Install Location
+:::tip[Install Location]
 A default Windows install runs from `C:\`; if you installed Windows in another location, then replace it accordingly.
 :::
 
@@ -33,7 +33,7 @@ A default Windows install runs from `C:\`; if you installed Windows in another l
 
 ## Running unpackerr as a Windows service
 
-:::info Community Contribution
+:::info[Community Contribution]
 The following content was provided by a community member, [IamGimli](https://github.com/IamGimli).
 :::
 

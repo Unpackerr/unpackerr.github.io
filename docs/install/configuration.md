@@ -93,7 +93,7 @@ extractions and cause extra disk IO. You may also specify
 a password file by providing a "password" in this format: `filepath:/path/to/passwords.txt`.
 The file must contain 1 password per line.
 
-:::info Other Secrets
+:::info[Other Secrets]
 You may store any string parameter (except time intervals) into a separate file
 by setting the value to `filepath:/path/to/file.txt`. In other words, if you want
 your Radarr API key to be read from a separate file, instead of storing it directly

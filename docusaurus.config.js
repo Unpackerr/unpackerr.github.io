@@ -2,8 +2,6 @@
 // `@type` JSDoc annotations allow editor autocompletion and type checking
 // (when paired with `@ts-check`).
 
-import {themes as prismThemes} from 'prism-react-renderer';
-
 /** @type {import('@docusaurus/types').Config} */
 const config = {
   title: 'Unpackerr Extracter',
@@ -12,7 +10,14 @@ const config = {
 
   // Future flags, see https://docusaurus.io/docs/api/docusaurus-config#future
   future: {
-    v4: true,
+    v4: {
+      removeLegacyPostBuildHeadAttribute: true,
+      fasterByDefault: true,
+      siteStorageNamespacing: true,
+      mdx1CompatDisabledByDefault: true,
+      // Infima cascade layers restyle the existing custom CSS.
+      useCssCascadeLayers: false,
+    },
   },
 
   url: 'https://unpackerr.zip',
@@ -24,6 +29,10 @@ const config = {
   markdown: {
     hooks: {
       onBrokenMarkdownLinks: 'warn',
+    },
+    mdx1Compat: {
+      // Keep :::tip Title working for docs and generate.sh output.
+      admonitions: true,
     },
   },
 
@@ -51,9 +60,6 @@ const config = {
   themeConfig:
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
-      colorMode: {
-        respectPrefersColorScheme: true,
-      },
       navbar: {
         logo: {
           alt: 'Unpackerr',
@@ -120,10 +126,6 @@ const config = {
       </div><div class="col footer__col" style="text-align:left;">
       Copyright © 2018-${new Date().getFullYear()} Go Lift
       </div></div>`,
-      },
-      prism: {
-        theme: prismThemes.github,
-        darkTheme: prismThemes.dracula,
       },
     }),
 };

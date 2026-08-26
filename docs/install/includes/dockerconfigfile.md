@@ -1,4 +1,4 @@
-:::info Default Config File
+:::info[Default Config File]
 When you start Unpackerr in Docker it checks for a `/config` directory. If one exists, and there is
 no `unpackerr.conf` file within it, a brand new file is written with all default values. We still
 recommend using the [generator](https://notifiarr.com/unpackerr) to build yourself a new file.

@@ -75,7 +75,7 @@ Or whatever download path you mounted; just put it there for ease of finding it.
 
 ## More Notes
 
-:::danger Security Opts
+:::danger[Security Opts]
 Do not include this in your compose. It will make Unpackerr not work properly. If you know how
 to adjust caps, go for it, but please don't ask for help without removing this first:
 
