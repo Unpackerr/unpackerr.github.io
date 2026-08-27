@@ -3,7 +3,7 @@ user or group read and write access to your archives. That may mean adding the `
 user, for example, to the `debian-transmission` group.
 You would do that with a command such as `sudo usermod -aG debian-transmission unpackerr`
 
-It's only suggested you do run `usermod` if you know what it does and how to set a umask.
+Only run `usermod` if you know what it does and how to set a umask.
 You probably instead want to change the uid and/or gid as shown next.
 
 ### Change the uid/gid

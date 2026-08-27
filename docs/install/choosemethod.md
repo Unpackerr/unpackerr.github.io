@@ -1,12 +1,10 @@
 ---
 id: choosemethod
 title: Choose Install Method
-pagination_prev: introduction
-pagination_next: null
 description: Choose an Unpackerr install method.
 ---
 
-We recommended to installing Unpackerr the same way you installed your
+We recommend installing Unpackerr the same way you installed your
 Starr or download apps. If your existing infrastructure exists in Docker,
 then Unpackerr should probably live in Docker too.
 
@@ -17,14 +15,16 @@ reside. Read more about that on the [Docker page](docker#folder-watcher).
 ## Instructions Available
 
 - [Docker](/docs/install/docker): [Compose](/docs/install/compose),
-    [unRAID](/docs/install/unraid), [TrueNAS Scale](/docs/install/truenas-scale)
+    [unRAID](/docs/install/unraid), [TrueNAS](/docs/install/truenas-scale)
 - [FreeBSD](/docs/install/freebsd)
 - [Linux: with root](/docs/install/linux), [without root / seedbox](/docs/install/seedbox)
 - [macOS](/docs/install/macos)
 - [Windows](/docs/install/windows)
 
+Need a one-shot command-line extractor instead of a daemon? See [xt](/docs/xt).
+
 :::tip[CPU Hog]
-Unpackerr uses a lot CPU while extracting, and tends not to work well when
+Unpackerr uses a lot of CPU while extracting, and tends not to work well when
 running on smaller systems like Synology NAS devices. Running Unpackerr on
 a system with a large CPU is ideal to avoid system performance degradation.
 The application uses only a few CPU cycles at idle to poll Starr apps and/or

@@ -1,43 +1,50 @@
 ---
 id: truenas-scale
-title: TrueNAS Scale
-pagination_prev: install/choosemethod
-pagination_next: install/configuration
-description: Install Unpackerr on TrueNAS Scale using TrueCharts.
+title: TrueNAS
+description: Install Unpackerr on TrueNAS SCALE or Community Edition.
 ---
 
-## TrueCharts
+The TrueCharts catalog is discontinued. Install Unpackerr with Portainer, Dockge,
+or a custom app.
 
 ## Portainer
 
-On TrueNAS Scale ElectricEel and later the use of docker containers is supported. To simplify installation,
-install a container manager such as Portainer or Dockge from the inbuilt application catalogue.
-This guide is based on the usage of Portainer.
-![Portainer App Install](438751966-5e05d82c-7202-454b-a642-c120d86a5439.png)
-![Portainer UI Open](438751972-c988a742-fd4f-4b95-b465-d58c108e785d.png)
+On TrueNAS SCALE ElectricEel and later (and TrueNAS Community Edition), Docker
+containers are supported. To simplify installation, install a container manager
+such as Portainer or Dockge from the built-in application catalogue.
+This guide uses Portainer.
 
-Generate the contents of docker-compose.yml via [Notifiarr/Unpackerr](https://notifiarr.com/unpackerr)
-or write this yourself.
+![Portainer App Install](/img/screenshots/truenas/portainer-install.png)
+![Portainer UI Open](/img/screenshots/truenas/portainer-ui.png)
+
+Generate `docker-compose.yml` with the [Unpackerr config generator](https://notifiarr.com/unpackerr)
+or write it yourself. See [Docker Compose](/docs/install/compose) for a minimal
+example. Map the same download folder your Starr apps use, and set `user:` to
+the correct uid and gid.
 
 In Portainer, navigate to stacks, and add a new stack.
-![Portainer Instance](438751979-fbc398b6-f0f2-4422-bf62-1c6a9d04b978.png)
-![Stacks Section](438751985-b761fda1-793a-4ff3-a387-91084b406af2.png)
 
-Name it 'unpackerr' and paste the contents of your previously created docker-compose.yml
-![Stacks List](438751991-89cdbc39-9b7a-458e-8464-d29f0236d288.png)
-![Create Unpackerr Stack](438751996-479f01b6-dc98-472a-8cf1-eafb40b4925a.png)
+![Portainer Instance](/img/screenshots/truenas/portainer-instance.png)
+![Stacks Section](/img/screenshots/truenas/stacks-section.png)
 
-Ensure the details are correct for your TrueNAS instance (i.e. the relevant directory is mapped and the
-user/group IDs are correct) and then create the stack.
-![Deploy Stack](438751935-3cd78746-c0e1-4761-a163-05df93202f4c.png)
+Name it `unpackerr` and paste the contents of your compose file.
 
-Portainer will do everything from here.
-Once done, to confirm it is working open the unpackerr stack and review the logs.
-You should see any pending files for connected applications being extracted.
-![Log View](438751959-0dbedfb9-626c-44ce-910f-14ebfaeaa0d6.png)
+![Stacks List](/img/screenshots/truenas/stacks-list.png)
+![Create Unpackerr Stack](/img/screenshots/truenas/create-stack.png)
+
+Confirm the host directory mapping and user/group IDs for your TrueNAS instance,
+then create the stack.
+
+![Deploy Stack](/img/screenshots/truenas/deploy-stack.png)
+
+Portainer deploys the stack from here.
+When it is running, open the unpackerr stack and review the logs.
+You should see pending files for connected applications being extracted.
+
+![Log View](/img/screenshots/truenas/log-view.png)
 
 ## TrueNAS Custom App
 
-There may be a way to install unpackerr directly without the use of a container manager.
+There may be a way to install Unpackerr directly without a container manager.
 If you work that out, please [edit this page](https://github.com/Unpackerr/unpackerr.github.io/blob/main/docs/install/truenas-scale.md)
 so others can benefit from your tribulations.

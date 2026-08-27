@@ -10,17 +10,23 @@ const sidebars = {
         'install/macos',
         'install/windows',
         {Linux: ['install/linux', 'install/archlinux', 'install/seedbox']},
-        'install/configuration',
       ],
     },
+    'install/configuration',
     'unpackerr/faq',
-    {'Tips & Tricks': ['unpackerr/troubleshooting', 'downloaders/torrent', 'downloaders/usenet']},
+    'unpackerr/troubleshooting',
+    'unpackerr/download-clients',
+    {
+      type: 'category',
+      label: 'xt',
+      collapsed: false,
+      items: ['xt'],
+    },
     {
       type: 'html',
       value: '<a href="https://golift.io"><img src="https://docs.golift.io/integrations/golift.png" /></a>',
       defaultStyle: true,
     },
-    'xt',
   ],
 };
 

@@ -1,8 +1,6 @@
 ---
 id: troubleshooting
 title: Troubleshooting
-pagination_prev: unpackerr/faq
-pagination_next: downloaders/torrent
 description: Tips and Tricks for troubleshooting Unpackerr installations.
 ---
 
@@ -34,15 +32,19 @@ description: Tips and Tricks for troubleshooting Unpackerr installations.
 
 If transfers are in an Error state they will not be extracted.
 
-**Permissions** tend to mess things up too, so make sure the user unpackerr runs as can read
+**Permissions** tend to mess things up too, so make sure the user Unpackerr runs as can read
 and write to your download location.
 
-Default Log files:
+## Log files
 
-- Linux: `/var/log/messages` or `/var/log/syslog` (w/ default syslog)
-- FreeBSD: `/var/log/syslog` (w/ default syslog)
-- macOS: `/usr/local/var/log/unpackerr.log` or `~/.unpackerr/unpackerr.log`
-- Windows: `~/.unpackerr/unpackerr.log`
+If you set `log_file`, that path is where Unpackerr writes. The Windows tray install
+documents `C:\ProgramData\unpackerr\logs\unpackerr.log` when you configure it that way.
+
+If `log_file` is unset:
+
+- Linux: `/var/log/messages` or `/var/log/syslog` (default syslog)
+- FreeBSD: `/var/log/syslog` (default syslog)
+- macOS and Windows GUI: `~/.unpackerr/unpackerr.log`
 
 Still having problems?
 [Let us know](https://github.com/Unpackerr/unpackerr/issues/new) or [find help on Discord](https://golift.io/discord).

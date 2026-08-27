@@ -1,8 +1,6 @@
 ---
 id: compose
 title: Docker Compose
-pagination_prev: install/docker
-pagination_next: install/configuration
 description: Install Unpackerr with Docker Compose!
 ---
 
@@ -18,8 +16,10 @@ import DataMount from './includes/dockerdatamount.md';
 - Then start it, like this:
 
 ```shell
-docker-compose up -d
+docker compose up -d
 ```
+
+Compose V1 used `docker-compose` (hyphen). Compose V2 is `docker compose` (space).
 
 Here's an example minimal compose file. This works well, and all the defaults should work for you too.
 The [`user:` parameter](https://docs.docker.com/compose/compose-file/05-services/#user) controls

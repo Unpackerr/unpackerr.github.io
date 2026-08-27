@@ -4,7 +4,7 @@
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
-  title: 'Unpackerr Extracter',
+  title: 'Unpackerr',
   tagline: 'Automated Archive Extractions',
   favicon: 'img/favicon.ico',
 
@@ -72,8 +72,13 @@ const config = {
             position: 'left',
           },
           {
-            href: 'https://github.com/facebook/docusaurus',
-            label: 'Docusaurus',
+            href: 'https://github.com/Unpackerr/unpackerr',
+            label: 'GitHub',
+            position: 'right',
+          },
+          {
+            to: 'docs/xt',
+            label: 'xt',
             position: 'right',
           },
         ],
