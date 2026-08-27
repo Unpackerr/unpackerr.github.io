@@ -58,7 +58,8 @@ of these types:
 - 7-Zip: `7z`, `7z.001`
 - tar: `tar`, `tar.gz`, `tgz`, `tar.bz2`, `tbz`, `tbz2`, `tar.xz`, `txz`, `tar.z`, `tz`, `tlz`
 - gzip / bzip2 / xz / zstd: `gz`, `gzip`, `bz2`, `xz`, `zst`, `zstd`
-- Other compressors: `lz4`, `lz`, `lzip`, `lzma`, `lzma2`, `z`, `br`, `brotli`, `s2`, `snappy`, `sz`, `zlib`, `zz`
+- Other compressors: `lz4`, `lz`, `lzip`, `lzma`, `lzma2`, `z`, `br`, `brotli`,
+  `s2`, `snappy`, `sz`, `zlib`, `zz`
 - Packages and images: `iso`, `cpio`, `cpio.gz`, `cpgz`, `ar`, `deb`, `rpm`
 - Cue sheets (FLAC splits): `cue`, `cue.txt`
 - Multi-file archives are supported with RAR and 7-Zip.
