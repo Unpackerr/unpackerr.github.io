@@ -19,10 +19,10 @@ Great question! It has two answers.
 
 ## 2. What is a Starr app?
 
-Lidarr, Radarr, Readarr, Sonarr, Whisparr
+Lidarr, Radarr, Readarr, Sonarr
 
 Unpackerr integrates with those apps. Prowlarr is also a Starr app, but Unpackerr does
-not talk to it.
+not talk to it. Whisparr uses the Radarr API; configure it as a Radarr instance.
 
 ## 3. Why does Unpackerr show things not in my Starr app?
 
