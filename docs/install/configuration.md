@@ -79,6 +79,12 @@ UN_FOLDER_1_PATH=/data/downloads/games/
 Anything that [has a header](https://github.com/Unpackerr/unpackerr/blob/main/examples/unpackerr.conf.example#L99)
 with double brackets `[[..]]` can be repeated as many times as you'd like.
 
+### Whisparr
+
+Whisparr uses the Radarr API. Rename `[[whisparr]]` to `[[radarr]]` (and `UN_WHISPARR_*`
+to `UN_RADARR_*`). Set `name = "Whisparr"` if logs and hooks should keep that label.
+Existing `[[whisparr]]` blocks still load as Radarr for now.
+
 {/* The Global content is generated from here: https://github.com/Unpackerr/unpackerr/tree/main/init/config */}
 <Global />
 
