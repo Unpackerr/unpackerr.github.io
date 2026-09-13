@@ -20,7 +20,7 @@ and [example config](https://github.com/Unpackerr/unpackerr/blob/main/examples/u
 - To use a config file in Docker, mount `/config` to the container and Unpackerr will write a config file.
   - Update the new file at `/config/unpackerr.conf` and restart the container.
 - When using a config file you must uncomment at minimum the `[header.key]` <font color="gray">
-  ex. `[radarr.0]`</font>, `url` and `api_key`.
+  ex. `[radarr.radarr]`</font>, `url` and `api_key`.
 - Uncomment means remove the hash `#` at the beginning of the line.
 - The config file format is [TOML](https://toml.io).
   - Indentation is not important like YAML files, but it's used for ease of readability.
@@ -48,7 +48,7 @@ notation works for all Starr apps, folders, command hooks, and webhooks.
 - Config File example with two Radarrs and two Folders.
 
 ```toml
-[radarr.radarr]
+[radarr.0]
  url = "http://radarr"
  api_key = "32characters"
 
@@ -67,8 +67,8 @@ notation works for all Starr apps, folders, command hooks, and webhooks.
 - Environment Variable example with two Radarrs and two Folders setting the same values as above.
 
 ```shell
-UN_RADARR_radarr_URL=http://radarr
-UN_RADARR_radarr_API_KEY=32characters
+UN_RADARR_0_URL=http://radarr
+UN_RADARR_0_API_KEY=32characters
 UN_RADARR_uhd_URL=http://radarr4k
 UN_RADARR_uhd_API_KEY=32morecharacters
 UN_FOLDER_0_PATH=/data/downloads/software/
