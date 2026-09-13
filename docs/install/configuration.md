@@ -48,7 +48,7 @@ notation works for all Starr apps, folders, command hooks, and webhooks.
 - Config File example with two Radarrs and two Folders.
 
 ```toml
-[radarr.0]
+[radarr.radarr]
  url = "http://radarr"
  api_key = "32characters"
 
@@ -67,8 +67,8 @@ notation works for all Starr apps, folders, command hooks, and webhooks.
 - Environment Variable example with two Radarrs and two Folders setting the same values as above.
 
 ```shell
-UN_RADARR_0_URL=http://radarr
-UN_RADARR_0_API_KEY=32characters
+UN_RADARR_radarr_URL=http://radarr
+UN_RADARR_radarr_API_KEY=32characters
 UN_RADARR_uhd_URL=http://radarr4k
 UN_RADARR_uhd_API_KEY=32morecharacters
 UN_FOLDER_0_PATH=/data/downloads/software/
@@ -82,7 +82,7 @@ like `[sonarr.0]` or `[folder.software]` can be repeated with a unique key.
 
 ### Whisparr
 
-Whisparr uses the Radarr API. Configure it as `[radarr.whisparr]` (env `UN_RADARR_whisparr_*`). Set `name = "Whisparr"` if logs and hooks should keep that label. Existing `[[whisparr]]` blocks still load as Radarr; a UI Save rewrites them to `[radarr.0]`. Changed in v1.0.0 (September 2026).
+Whisparr uses the Radarr API. Configure it as `[radarr.whisparr]` (env `UN_RADARR_whisparr_*`). Set `name = "Whisparr"` if logs and hooks should keep that label. Existing `[[whisparr]]` blocks still load as Radarr. Changed in v1.0.0 (September 2026).
 
 ### Named instances
 
