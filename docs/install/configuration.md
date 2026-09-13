@@ -19,8 +19,8 @@ and [example config](https://github.com/Unpackerr/unpackerr/blob/main/examples/u
 - Setting a log file is strongly recommended. This makes it much easier to troubleshoot problems.
 - To use a config file in Docker, mount `/config` to the container and Unpackerr will write a config file.
   - Update the new file at `/config/unpackerr.conf` and restart the container.
-- When using a config file you must uncomment at minimum the `[[header]]` <font color="gray">
-  ex. `[[radarr]]`</font>, `url` and `api_key`.
+- When using a config file you must uncomment at minimum the `[header.key]` <font color="gray">
+  ex. `[radarr.0]`</font>, `url` and `api_key`.
 - Uncomment means remove the hash `#` at the beginning of the line.
 - The config file format is [TOML](https://toml.io).
   - Indentation is not important like YAML files, but it's used for ease of readability.
@@ -35,31 +35,32 @@ Simply fill in a web form, and click a button to get a working config file.
 
 ### Two+ Instances
 
-When adding a second (or third+) instance to the __config file__, you just
-add another `[[header]]` <font color="gray">ex. `[[sonarr]]`</font> and the
-`url`/`api_key`/etc under it. When adding a second instance to the __environment
-variables__, you must increment the `0` to a `1`. And to a `2` if you have 3
-instances. There is no limit to the number of supported instances. This notation
-works for all Starr apps, folders, command hooks, and webhooks.
+When adding a second (or third+) instance to the __config file__, use another
+named table <font color="gray">ex. `[sonarr.0]`, `[sonarr.uhd]`</font> and the
+`url`/`api_key`/etc under it. Environment variables use that same key:
+`UN_SONARR_0_URL` or `UN_SONARR_uhd_URL`. Array rows from older configs load as
+keys `0`, `1`, …. There is no limit to the number of supported instances. This
+notation works for all Starr apps, folders, command hooks, and webhooks.
 
 <details>
   <summary>Config examples with multiple instances.</summary>
 
 - Config File example with two Radarrs and two Folders.
 
-```yaml
-[[radarr]]
+```toml
+[radarr.0]
  url = "http://radarr"
  api_key = "32characters"
 
-[[radarr]]
+[radarr.uhd]
+ name = "4K"
  url = "http://radarr4k"
  api_key = "32morecharacters"
 
-[[folder]]
+[folder.0]
  path = "/data/downloads/software/"
 
-[[folder]]
+[folder.games]
  path = "/data/downloads/games/"
 ```
 
@@ -68,22 +69,24 @@ works for all Starr apps, folders, command hooks, and webhooks.
 ```shell
 UN_RADARR_0_URL=http://radarr
 UN_RADARR_0_API_KEY=32characters
-UN_RADARR_1_URL=http://radarr4k
-UN_RADARR_1_API_KEY=32morecharacters
+UN_RADARR_uhd_URL=http://radarr4k
+UN_RADARR_uhd_API_KEY=32morecharacters
 UN_FOLDER_0_PATH=/data/downloads/software/
-UN_FOLDER_1_PATH=/data/downloads/games/
+UN_FOLDER_games_PATH=/data/downloads/games/
 ```
 
 </details>
 
 Anything that [has a header](https://github.com/Unpackerr/unpackerr/blob/main/examples/unpackerr.conf.example#L99)
-with double brackets `[[..]]` can be repeated as many times as you'd like.
+like `[sonarr.0]` or `[folder.software]` can be repeated with a unique key.
 
 ### Whisparr
 
-Whisparr uses the Radarr API. Rename `[[whisparr]]` to `[[radarr]]` (and `UN_WHISPARR_*`
-to `UN_RADARR_*`). Set `name = "Whisparr"` if logs and hooks should keep that label.
-Existing `[[whisparr]]` blocks still load as Radarr for now.
+Whisparr uses the Radarr API. Configure it as `[radarr.whisparr]` (env `UN_RADARR_whisparr_*`). Set `name = "Whisparr"` if logs and hooks should keep that label. Existing `[[whisparr]]` blocks still load as Radarr; a UI Save rewrites them to `[radarr.0]`. Changed in v1.0.0 (September 2026).
+
+### Named instances
+
+Starr apps, folders, webhooks, and command hooks are identified by a short key, not by list position. In the config file use `[sonarr.uhd]`, `[folder.software]`, `[webhook.discord]`; in env use `UN_SONARR_uhd_URL`, `UN_FOLDER_software_PATH`, `UN_WEBHOOK_discord_URL`. The optional `name` on Starr and hooks is only a label (`name = "Starrs & Stripes"`). Existing `[[sonarr]]` / `[[folder]]` / `[[webhook]]` tables still load as keys `0`, `1`, …. Open that section in the web UI and click Save: Unpackerr rewrites the file to named tables automatically. Changed in v1.0.0 (September 2026).
 
 {/* The Global content is generated from here: https://github.com/Unpackerr/unpackerr/tree/main/init/config */}
 <Global />
@@ -103,8 +106,8 @@ by setting the value to `filepath:/path/to/file.txt`. In other words, if you wan
 your Radarr API key to be read from a separate file, instead of storing it directly
 in the config file or environment variables you can do this:
 
-```json
-[[radarr]]
+```toml
+[radarr.0]
   url = "https://some.url/radarr"
   api_key = "filepath:/etc/secrets/radarr.txt"
 ```
