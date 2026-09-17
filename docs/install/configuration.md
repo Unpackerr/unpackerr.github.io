@@ -14,6 +14,25 @@ Expand the blue sections to see excerpts from the
 [example docker-compose.yml](https://github.com/Unpackerr/unpackerr/blob/main/examples/docker-compose.yml)
 and [example config](https://github.com/Unpackerr/unpackerr/blob/main/examples/unpackerr.conf.example) files.
 
+## Web UI
+
+:::danger[Web UI]
+
+- Added in v1.0.0 (September 2026).
+
+Most users should use the Web UI to configure Unpackerr.
+While you can use this page for reference, you should avoid editing the config file.
+
+- See [Web UI page](web-ui).
+
+:::
+
+Unpackerr has a built in Web UI where you can configure all the settings using a validated form.
+The Web UI also makes it easy to see what Unpackerr is doing live and to view the extraction history.
+This page exists from a time when configuration required editing a file. Now it's for power users.
+
+**Use the web interface. Don't edit the config file.**
+
 ## Config
 
 - Setting a log file is strongly recommended. This makes it much easier to troubleshoot problems.
@@ -25,16 +44,6 @@ and [example config](https://github.com/Unpackerr/unpackerr/blob/main/examples/u
 - The config file format is [TOML](https://toml.io).
   - Indentation is not important like YAML files, but it's used for ease of readability.
   - You may use `"` or `'` or `'''` or `"""` to wrap strings. Recommend `'` for paths.
-
-### Web UI
-
-- Added in v1.0.0 (September 2026).
-
-Unpackerr has a built in Web UI where you can configure all the settings using a validated form.
-The Web UI also makes it easy to see what Unpackerr is doing live and to view the extraction history.
-This page exists from a time when configuration required editing a file. Now it's for power users.
-
-**Use the web interface. Don't edit the config file.**
 
 ### Two+ Instances
 

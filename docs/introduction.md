@@ -12,7 +12,8 @@ and extract items they download. It can do both, at the same time even.
 ## Features
 
 - Simple to use.
-- Built-in web UI (queue, history, logs, settings) on port 5656.
+- Built-in [web UI](/docs/install/web-ui) (queue, history, logs, settings) on
+  port 5656.
 - Rich logs.
 - Extracts entire folders.
 - Extracts your subs files too.

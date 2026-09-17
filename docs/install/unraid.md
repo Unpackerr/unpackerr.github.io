@@ -26,13 +26,6 @@ prefer another folder. Apply, then open the WebUI.
 First login is user `admin`. The password is printed once in the container log
 (`Generated temporary UI password`). Change it in Settings.
 
-:::note[Multiple instances]
-Add extra Starr apps, folders, and hooks in the web UI. Each row has a short
-key (for example `uhd`). You can still use env vars such as
-`UN_RADARR_uhd_URL` if you insist; see
-[configuration](/docs/install/configuration#two-instances).
-:::
-
 :::tip[Download Location]
 The most common misconfiguration on unRAID, by far, and it's not even a close
 second, is having the correct path mounted for your download location. As you

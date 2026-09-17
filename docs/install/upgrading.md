@@ -178,5 +178,8 @@ dropping the env vars.
 4. Optional: open the Starr (or folder/hook) page and Save once so named
    tables replace leftover `[[sonarr]]` arrays.
 
+Day-to-day use after that is on the [Web UI](/docs/install/web-ui) page
+(password reset, log lines, reverse proxy).
+
 Need a hand? [Go Lift Discord](https://golift.io/discord) or
 [GitHub issues](https://github.com/Unpackerr/unpackerr/issues/new).
