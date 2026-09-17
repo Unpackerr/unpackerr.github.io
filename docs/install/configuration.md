@@ -26,12 +26,15 @@ and [example config](https://github.com/Unpackerr/unpackerr/blob/main/examples/u
   - Indentation is not important like YAML files, but it's used for ease of readability.
   - You may use `"` or `'` or `'''` or `"""` to wrap strings. Recommend `'` for paths.
 
-### Generator
+### Web UI
 
-[Notifiarr](https://notifiarr.com) hosts a configuration file maker.
-Simply fill in a web form, and click a button to get a working config file.
+- Added in v1.0.0 (September 2026).
 
-- **Access the generator here: https://notifiarr.com/unpackerr**
+Unpackerr has a built in Web UI where you can configure all the settings using a validated form.
+The Web UI also makes it easy to see what Unpackerr is doing live and to view the extraction history.
+This page exists from a time when configuration required editing a file. Now it's for power users.
+
+**Use the web interface. Don't edit the config file.**
 
 ### Two+ Instances
 
@@ -82,11 +85,20 @@ like `[sonarr.0]` or `[folder.software]` can be repeated with a unique key.
 
 ### Whisparr
 
-Whisparr uses the Radarr API. Configure it as `[radarr.whisparr]` (env `UN_RADARR_whisparr_*`). Set `name = "Whisparr"` if logs and hooks should keep that label. Existing `[[whisparr]]` blocks still load as Radarr. Changed in v1.0.0 (September 2026).
+- Changed in v1.0.0 (September 2026).
+
+Whisparr uses the Radarr API. Configure it as `[radarr.whisparr]` (env `UN_RADARR_whisparr_*`).
+Set `name = "Whisparr"` if logs and hooks should keep that label.
 
 ### Named instances
 
-Starr apps, folders, webhooks, and command hooks are identified by a short key, not by list position. In the config file use `[sonarr.uhd]`, `[folder.software]`, `[webhook.discord]`; in env use `UN_SONARR_uhd_URL`, `UN_FOLDER_software_PATH`, `UN_WEBHOOK_discord_URL`. The optional `name` on Starr and hooks is only a label (`name = "Starrs & Stripes"`). Existing `[[sonarr]]` / `[[folder]]` / `[[webhook]]` tables still load as keys `0`, `1`, …. Open that section in the web UI and click Save: Unpackerr rewrites the file to named tables automatically. Changed in v1.0.0 (September 2026).
+- Added in v1.0.0 (September 2026).
+
+Starr apps, folders, webhooks, and command hooks are identified by a short key, not by list position.
+In the config file use `[sonarr.uhd]`, `[folder.software]`, `[webhook.discord]`; in env use `UN_SONARR_uhd_URL`,
+`UN_FOLDER_software_PATH`, `UN_WEBHOOK_discord_URL`. The optional `name` on Starr and hooks is only a label
+(`name = "Starrs & Stripes"`). Existing `[[sonarr]]` / `[[folder]]` / `[[webhook]]` tables still load as keys
+`0`, `1`, …. Open that section in the web UI and click Save: Unpackerr rewrites the file to named tables automatically.
 
 {/* The Global content is generated from here: https://github.com/Unpackerr/unpackerr/tree/main/init/config */}
 <Global />

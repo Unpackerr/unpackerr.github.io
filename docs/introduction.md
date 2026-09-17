@@ -12,6 +12,7 @@ and extract items they download. It can do both, at the same time even.
 ## Features
 
 - Simple to use.
+- Built-in web UI (queue, history, logs, settings) on port 5656.
 - Rich logs.
 - Extracts entire folders.
 - Extracts your subs files too.
@@ -27,7 +28,8 @@ and extract items they download. It can do both, at the same time even.
 
 This application runs as a daemon on your download host. It checks for completed
 downloads and extracts them so Lidarr, Radarr, Readarr, and Sonarr may
-import them. There are a handful of options out there for extracting and deleting
+import them. v1 adds a web UI; existing `0.x` installs should read
+[Upgrading to v1](/docs/install/upgrading). There are a handful of options out there for extracting and deleting
 files after your client downloads them. I just didn't care for any of them, so I
 wrote my own. I wanted a small single-binary with reasonable logging that can extract
 downloaded archives and clean up the mess after they've been imported.

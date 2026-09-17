@@ -2,6 +2,7 @@
 const sidebars = {
   someSidebar: [
     'introduction',
+    'install/upgrading',
     {
       Installation: [
         'install/choosemethod',
