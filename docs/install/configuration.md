@@ -80,8 +80,7 @@ UN_FOLDER_games_PATH=/data/downloads/games/
 
 </details>
 
-Anything that [has a header](https://github.com/Unpackerr/unpackerr/blob/main/examples/unpackerr.conf.example#L99)
-like `[sonarr.0]` or `[folder.software]` can be repeated with a unique key.
+Anything that has a header like `[sonarr.0]` or `[folder.software]` can be repeated with a unique key.
 
 ### Whisparr
 
