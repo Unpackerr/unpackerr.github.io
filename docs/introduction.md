@@ -6,12 +6,14 @@ description: Introduction and explanation of Unpackerr.
 
 Unpackerr is an application that runs on Windows, macOS, Linux, FreeBSD and in Docker.
 You can use it to watch a download folder and extract new items.
-The more common use is to watch Starr apps (Radarr, Sonarr, Readarr, Lidarr, Whisparr)
+The more common use is to watch Starr apps (Radarr, Sonarr, Readarr, Lidarr)
 and extract items they download. It can do both, at the same time even.
 
 ## Features
 
 - Simple to use.
+- Built-in [web UI](/docs/install/web-ui) (queue, history, logs, settings) on
+  port 5656.
 - Rich logs.
 - Extracts entire folders.
 - Extracts your subs files too.
@@ -26,8 +28,9 @@ and extract items they download. It can do both, at the same time even.
 ## Description
 
 This application runs as a daemon on your download host. It checks for completed
-downloads and extracts them so Lidarr, Radarr, Readarr, Sonarr, and Whisparr may
-import them. There are a handful of options out there for extracting and deleting
+downloads and extracts them so Lidarr, Radarr, Readarr, and Sonarr may
+import them. v1 adds a web UI; existing `0.x` installs should read
+[Upgrading to v1](/docs/install/upgrading). There are a handful of options out there for extracting and deleting
 files after your client downloads them. I just didn't care for any of them, so I
 wrote my own. I wanted a small single-binary with reasonable logging that can extract
 downloaded archives and clean up the mess after they've been imported.
@@ -67,7 +70,7 @@ of these types:
 
 ## Starr Logic
 
-The application polls Radarr, Readarr, Sonarr, Lidarr, and Whisparr at the `interval`
+The application polls Radarr, Readarr, Sonarr, and Lidarr at the `interval`
 configured. The queued items are inspected for completeness.
 
 When Unpackerr finds an item in a Starr app, the download location is checked for an

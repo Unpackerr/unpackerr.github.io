@@ -35,6 +35,16 @@ If transfers are in an Error state they will not be extracted.
 **Permissions** tend to mess things up too, so make sure the user Unpackerr runs as can read
 and write to your download location.
 
+## Folder watch never queues anything
+
+On Docker bind mounts and CIFS, `inotify` often never fires. v1 does not
+poll unless you set a per-folder `interval` (try `1s`). The old global
+`UN_FOLDERS_INTERVAL` does nothing.
+
+If extracts start while a download is still writing, set `wait_extensions`
+(`.part`, `.crdownload`) or raise `start_delay`. See
+[Watch folders](/docs/install/configuration#watch-folders).
+
 ## Log files
 
 If you set `log_file`, that path is where Unpackerr writes. The Windows tray install

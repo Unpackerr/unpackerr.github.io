@@ -54,6 +54,21 @@ And if you're trying to watch a folder, add this `environment:` variable with _y
       - UN_FOLDER_0_PATH=/downloads/autoxtract
 ```
 
+On Docker, filesystem events are often missing. Add a poll interval on that
+same key if nothing shows in the queue:
+
+```yaml
+      - UN_FOLDER_0_INTERVAL=1s
+```
+
+Incomplete downloads can wait on a suffix instead of polling:
+
+```yaml
+      - UN_FOLDER_0_WAIT_EXTENSION_0=.part
+```
+
+See [Folder Watcher](docker#folder-watcher).
+
 ## Data Mount
 
 <DataMount />
