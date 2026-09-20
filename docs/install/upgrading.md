@@ -30,10 +30,18 @@ If you are on 0.16.x or earlier today, read this page before you pull `latest`.
   `system:metrics:read` (`Authorization: Bearer` or `X-Api-Key`).
 - Docker: mount `/config` if you want the UI to persist settings. Unpackerr
   writes `/config/unpackerr.conf` when that directory exists.
+- Folder poll interval is per watch path (`interval` on `[folder.foo]`, env
+  `UN_FOLDER_foo_INTERVAL`). Default `0s` is fsnotify only. Docker no longer
+  auto-polls every second. Global `folders.interval` / `UN_FOLDERS_INTERVAL`
+  is ignored.
+- Watched-folder extracts resume from history after a restart. Incomplete
+  downloads can wait on `wait_extensions`; archive-free folders can be
+  skipped with `skip_empty`.
 
-The extractor, Starr polling, and folder watch behave as they did. This release
-is mostly about operating the app from a browser instead of a pile of `UN_*`
-variables.
+The extractor and Starr polling work as they did. Folder watch picked up a
+few v1 changes (per-path poll, restore after restart, wait/skip). See
+[Watched folders](#watched-folders). This release is still mostly about
+operating the app from a browser instead of a pile of `UN_*` variables.
 
 ## Config file permissions
 
@@ -169,6 +177,45 @@ Environment variables: `UN_WHISPARR_*` becomes `UN_RADARR_whisparr_*`
 (for example `UN_RADARR_whisparr_URL`). Prefer putting this in the file and
 dropping the env vars.
 
+## Watched folders
+
+v0.x Docker set a global `folders.interval` (default 1s in the container).
+That knob is gone. Each watch path has its own `interval`, default **off**.
+
+If you watched folders in Docker and items stop appearing after upgrade:
+
+1. Open **Settings → Folders**.
+2. Set **Poll interval** to `1s` on each path that lives on a bind mount or
+   CIFS share.
+3. Save.
+
+Config equivalent:
+
+```toml
+[folder.downloads]
+  path = "/downloads/extract"
+  interval = "1s"
+```
+
+Env: `UN_FOLDER_downloads_INTERVAL=1s`. Native installs that already saw
+fsnotify events can leave the default.
+
+Other folder behavior that changed in v1:
+
+- **Restart:** folder queue rows restore from history (delete-after,
+  retries, interrupted extracts, waiting after retry). Starr WAITING is
+  still not restored; the next poll recreates it. Removing a watch path
+  drops those rows.
+- **`wait_extensions`:** stay WAITING while `.part` / `.crdownload` (or
+  whatever you list) exists in the item's top folder.
+- **`skip_empty`:** after `start_delay`, folders with no archives leave the
+  queue silently.
+- Named tables: `[folder.software]` / `UN_FOLDER_software_PATH`. Old
+  `[[folder]]` rows load as `0`, `1`, ….
+
+Details: [Watch folders](/docs/install/configuration#watch-folders) and
+[Docker Folder Watcher](/docs/install/docker#folder-watcher).
+
 ## After upgrade
 
 1. Confirm the UI loads and you can Save a harmless setting (or a Starr
@@ -177,6 +224,8 @@ dropping the env vars.
 3. If you scrape Prometheus, add an API key with `system:metrics:read`.
 4. Optional: open the Starr (or folder/hook) page and Save once so named
    tables replace leftover `[[sonarr]]` arrays.
+5. If you watch folders in Docker, set a poll interval on each path. See
+   [Watched folders](#watched-folders).
 
 Day-to-day use after that is on the [Web UI](/docs/install/web-ui) page
 (password reset, log lines, reverse proxy).

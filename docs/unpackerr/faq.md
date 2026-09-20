@@ -65,3 +65,10 @@ If hard links don't work **at all** it could indicate another problem
 with your Starr app setup. See [TRaSH's Guides](https://trash-guides.info/Hardlinks/Hardlinks-and-Instant-Moves/)
 and the [Servarr Team's Docker Guide](https://wiki.servarr.com/docker-guide)
 for details on Docker path best-practices.
+
+## 6. Why don't watched folders show up in Docker?
+
+v1 watches with filesystem events by default. Docker (and CIFS) often hide
+those events, so the queue stays empty. Set that folder's poll `interval`
+to `1s` in the UI or `UN_FOLDER_<key>_INTERVAL=1s`. See
+[Folder Watcher](/docs/install/docker#folder-watcher).

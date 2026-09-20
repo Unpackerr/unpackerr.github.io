@@ -108,6 +108,34 @@ In the config file use `[sonarr.uhd]`, `[folder.software]`, `[webhook.discord]`;
 (`name = "Starrs & Stripes"`). Existing `[[sonarr]]` / `[[folder]]` / `[[webhook]]` tables still load as keys
 `0`, `1`, …. Open that section in the web UI and click Save: Unpackerr rewrites the file to named tables automatically.
 
+### Watch folders
+
+- Changed in v1.0.0 (September 2026).
+
+Folder watch is not Starr. Each `[folder.<key>]` is a path Unpackerr extracts
+on its own. The generated tables below list every option.
+
+**Poll interval** is per folder (`interval`, env `UN_FOLDER_<key>_INTERVAL`).
+Default `0s` uses filesystem events. Set `1s` (or similar) on Docker and CIFS
+when new archives never show in the queue. Global `folders.interval` /
+`UN_FOLDERS_INTERVAL` is gone; leftover `[folders] interval` is ignored.
+Details: [Docker Folder Watcher](docker#folder-watcher).
+
+**After a restart**, recent folder history returns to the live queue the same
+way Starr items do: EXTRACTED still waiting on `delete_after`, EXTRACTFAILED
+retries, interrupted EXTRACTING, QUEUED, and WAITING after a retry. A path
+you removed from config is not restored. Windows matches watch paths without
+regard to drive-letter case.
+
+**Incomplete downloads:** `wait_extensions` keeps the item WAITING while a
+matching file exists in that item's top folder (`.part`, `.crdownload`, …).
+Nested paths are not scanned. The queue shows the blocking filename.
+Recheck is every 5s and does not enable the poller.
+Env: `UN_FOLDER_<key>_WAIT_EXTENSION_0=.part`.
+
+**Empty folders:** `skip_empty` (env `UN_FOLDER_<key>_SKIP_EMPTY`) drops
+archive-free folders after `start_delay` with no history row and no webhook.
+
 {/* The Global content is generated from here: https://github.com/Unpackerr/unpackerr/tree/main/init/config */}
 <Global />
 

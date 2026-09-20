@@ -16,6 +16,9 @@ locked in the form until you remove that variable.
 ## What you get
 
 - **Dashboard** — live extract queue (retry / forget) and Starr poll counts.
+  Progress shows archive index, speed/ETA, and countdowns (start delay,
+  retry, folder cleanup). Folder WAITING rows show the blocking filename
+  when `wait_extensions` is set.
 - **History** — completed extracts, with delete and clear.
 - **Logs** — follow the app log in the browser (and download rotated files).
 - **Settings** — general, Starr, folders, webhooks, command hooks, web server.
