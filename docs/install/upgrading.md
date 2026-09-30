@@ -37,6 +37,10 @@ If you are on 0.16.x or earlier today, read this page before you pull `latest`.
 - Watched-folder extracts resume from history after a restart. Incomplete
   downloads can wait on `wait_extensions`; archive-free folders can be
   skipped with `skip_empty`.
+- Lidarr `split_flac` splits FLAC and APE cue sheets into tracks. APE tracks
+  can be written as APE, WAV, or FLAC (`ape_format`). A compression of `0` is
+  set to normal (`2000`). See
+  [Lidarr cue sheets](configuration#lidarr-cue-sheets).
 
 The extractor and Starr polling work as they did. Folder watch picked up a
 few v1 changes (per-path poll, restore after restart, wait/skip). See

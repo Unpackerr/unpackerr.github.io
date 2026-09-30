@@ -62,7 +62,8 @@ of these types:
 - Other compressors: `lz4`, `lz`, `lzip`, `lzma`, `lzma2`, `z`, `br`, `brotli`,
   `s2`, `snappy`, `sz`, `zlib`, `zz`
 - Packages and images: `iso`, `cpio`, `cpio.gz`, `cpgz`, `ar`, `deb`, `rpm`
-- Cue sheets (FLAC splits): `cue`, `cue.txt`
+- Cue sheets: `cue`, `cue.txt`. Lidarr's `split_flac` splits FLAC and APE
+  images into tracks. See [Lidarr cue sheets](/docs/install/configuration#lidarr-cue-sheets).
 - Multi-file archives are supported with RAR and 7-Zip.
 - Password protected archives are supported with RAR and 7-Zip.
 - Archives are detected by the file extension. ISO is disabled by default

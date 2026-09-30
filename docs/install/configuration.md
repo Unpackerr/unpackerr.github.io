@@ -136,6 +136,27 @@ Env: `UN_FOLDER_<key>_WAIT_EXTENSION_0=.part`.
 **Empty folders:** `skip_empty` (env `UN_FOLDER_<key>_SKIP_EMPTY`) drops
 archive-free folders after `start_delay` with no history row and no webhook.
 
+### Lidarr cue sheets
+
+Lidarr only. `split_flac` splits a completed download that has a CUE sheet.
+It splits both FLAC and APE images into one file per track, then asks Lidarr
+to import those tracks. Sonarr, Radarr, and Readarr ignore this setting.
+A watched folder does not split cue sheets.
+
+When the image is APE, `ape_format` chooses the files those tracks become:
+
+- `ape` keeps Monkey's Audio. This is the default, and an empty value means the same.
+- `wav` and `flac` decode the audio. FLAC cannot store 32-bit or float PCM.
+
+`ape_compression` applies only when the format is APE. The choices are `1000`,
+`2000`, `3000`, `4000`, and `5000`. A default of `0` is set to `2000` (normal).
+WAV and FLAC ignore compression.
+
+A lone `.ape` file that has no cue sheet is left for Lidarr to import as-is.
+
+Environment variables use the instance key: `UN_LIDARR_<key>_SPLIT_FLAC`,
+`UN_LIDARR_<key>_APE_FORMAT`, and `UN_LIDARR_<key>_APE_COMPRESSION`.
+
 {/* The Global content is generated from here: https://github.com/Unpackerr/unpackerr/tree/main/init/config */}
 <Global />
 
