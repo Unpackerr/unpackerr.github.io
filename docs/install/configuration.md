@@ -18,7 +18,7 @@ and [example config](https://github.com/Unpackerr/unpackerr/blob/main/examples/u
 
 :::danger[Web UI]
 
-- Added in v1.0.0 (September 2026).
+- Added in v1.0.0 (October 2026).
 
 Most users should use the Web UI to configure Unpackerr.
 While you can use this page for reference, you should avoid editing the config file.
@@ -93,14 +93,14 @@ Anything that has a header like `[sonarr.0]` or `[folder.software]` can be repea
 
 ### Whisparr
 
-- Changed in v1.0.0 (September 2026).
+- Changed in v1.0.0 (October 2026).
 
 Whisparr uses the Radarr API. Configure it as `[radarr.whisparr]` (env `UN_RADARR_whisparr_*`).
 Set `name = "Whisparr"` if logs and hooks should keep that label.
 
 ### Named instances
 
-- Added in v1.0.0 (September 2026).
+- Added in v1.0.0 (October 2026).
 
 Starr apps, folders, webhooks, and command hooks are identified by a short key, not by list position.
 In the config file use `[sonarr.uhd]`, `[folder.software]`, `[webhook.discord]`; in env use `UN_SONARR_uhd_URL`,
@@ -110,7 +110,7 @@ In the config file use `[sonarr.uhd]`, `[folder.software]`, `[webhook.discord]`;
 
 ### Watch folders
 
-- Changed in v1.0.0 (September 2026).
+- Changed in v1.0.0 (October 2026).
 
 Folder watch is not Starr. Each `[folder.<key>]` is a path Unpackerr extracts
 on its own. The generated tables below list every option.
