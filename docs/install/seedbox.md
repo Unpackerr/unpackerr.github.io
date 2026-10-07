@@ -30,10 +30,6 @@ works if you use this solution. Please read and understand what the script does 
 ```bash
 #!/bin/bash
 
-# Get the latest release tag from GitHub API.
-TAG=$(curl -s https://api.github.com/repos/Unpackerr/unpackerr/releases/latest | \
-  grep "tag_name" | cut -d '"' -f 4)
-
 # Check system architecture and assign it to ARCH variable.
 ARCH="$(uname -m)"
 if [ "$ARCH" = "x86_64" ]; then
@@ -45,16 +41,13 @@ elif [ "$ARCH" = "armv7l" ]; then
 fi
 
 # Construct the download URL.
-URL="https://github.com/Unpackerr/unpackerr/releases/download/$TAG/unpackerr.${ARCH}.linux.gz"
+URL=$(curl -s https://api.github.com/repos/Unpackerr/unpackerr/releases/latest |   grep -e "browser_download_url.*linux_$ARCH"| cut -d '"' -f 4)
 
-# Download and extract the binary.
+# Download and extract the binary and the example config file.
 mkdir -p $HOME/unpackerr
-wget $URL -O - | gunzip > $HOME/unpackerr/unpackerr
+wget -qO- "$URL" | tar xzf - -C "$HOME/unpackerr" unpackerr unpackerr.conf.example
+mv $HOME/unpackerr/unpackerr.conf.example $HOME/unpackerr/unpackerr.conf
 chmod 0755 $HOME/unpackerr/unpackerr
-
-# Download the example config file from the same tag.
-wget https://raw.githubusercontent.com/Unpackerr/unpackerr/$TAG/examples/unpackerr.conf.example \
-  -O $HOME/unpackerr/unpackerr.conf
 chmod 0600 $HOME/unpackerr/unpackerr.conf
 
 # This opens nano, so you may edit unpackerr.conf to suit your needs.
