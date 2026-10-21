@@ -2,6 +2,7 @@
 const sidebars = {
   someSidebar: [
     'introduction',
+    'install/upgrading',
     {
       Installation: [
         'install/choosemethod',
@@ -12,6 +13,7 @@ const sidebars = {
         {Linux: ['install/linux', 'install/archlinux', 'install/seedbox']},
       ],
     },
+    'install/web-ui',
     'install/configuration',
     'unpackerr/faq',
     'unpackerr/troubleshooting',
