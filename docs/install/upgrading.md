@@ -42,8 +42,11 @@ If you are on 0.16.x or earlier today, read this page before you pull `latest`.
   set to normal (`2000`). See
   [Lidarr cue sheets](configuration#lidarr-cue-sheets).
 
-The extractor and Starr polling work as they did. Folder watch picked up a
-few v1 changes (per-path poll, restore after restart, wait/skip). See
+The extractor is [xtractr 0.8.0](https://github.com/golift/xtractr/releases/tag/v0.8.0)
+(0.16.1 shipped 0.6.0). Starr's default uncompressed ratio cap is **7.5:1**
+(it was 5:1), and a nested archive's own bytes no longer count toward that cap.
+Electron `.asar` archives extract. Folder watch picked up a few v1 changes
+(per-path poll, restore after restart, wait/skip). See
 [Watched folders](#watched-folders). This release is still mostly about
 operating the app from a browser instead of a pile of `UN_*` variables.
 

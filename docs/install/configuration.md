@@ -141,7 +141,6 @@ archive-free folders after `start_delay` with no history row and no webhook.
 Lidarr only. `split_flac` splits a completed download that has a CUE sheet.
 It splits both FLAC and APE images into one file per track, then asks Lidarr
 to import those tracks. Sonarr, Radarr, and Readarr ignore this setting.
-A watched folder does not split cue sheets.
 
 When the image is APE, `ape_format` chooses the files those tracks become:
 
