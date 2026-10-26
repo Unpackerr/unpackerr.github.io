@@ -106,16 +106,28 @@ docker run -e PUID=1000 -e PGID=100 -d -v /mnt/data:/data -v /mnt/config:/config
 
 ## Folder Watcher
 
-Watching folders in Docker will cause Unpackerr to constantly poll the
-watched-folder for changes at a default rate of `1s` (1 second).
+The Folder Watch feature uses `inotify` (a.k.a. `fsnotify`) to notice new
+archives. Each watch path has its own `interval`. The default is `0s`, which
+means filesystem events only — Unpackerr does **not** poll.
 
-The Folder Watch feature uses `inotify` (a.k.a. `fsnotify`) to identify changes to the
-watched folder. A folder-poller is automatically started when run in Docker because
-`inotify` is unreliable. Disable the folder poller (and rely on `inotify` only) by
-setting `folders.interval` (`UN_FOLDERS_INTERVAL`) to `1ms`.
+Docker bind mounts and CIFS often drop or delay those events, so items never
+appear in the queue. Turn polling on for that path:
 
-If Unpackerr has trouble determining when downloads are finished, set
-`start_delay` high enough to avoid beginning extracting files that are
-still being transferred.
+- Web UI: **Settings → Folders** → **Poll interval** (try `1s`).
+- Config: `interval = "1s"` under `[folder.downloads]`.
+- Env: `UN_FOLDER_downloads_INTERVAL=1s` (same key as the table).
+
+Leave `interval` at `0s` when native fsnotify works. Polling increases disk
+reads. A folder with a poll interval uses the poller only; other folders keep
+fsnotify.
+
+v0.x Docker installs auto-polled every 1s via global `folders.interval`
+(`UN_FOLDERS_INTERVAL`). That setting is gone. An old `[folders] interval`
+line in the file is ignored.
+
+If Unpackerr starts extracting files that are still downloading, raise
+`start_delay`, or set `wait_extensions` (for example `.part`, `.crdownload`)
+on that folder. Waiting items are rechecked every 5 seconds without turning
+the poller on. See [Watch folders](configuration#watch-folders).
 
 **Alternatively, run Unpackerr as a native service instead of in Docker.**

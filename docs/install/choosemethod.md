@@ -4,6 +4,9 @@ title: Choose Install Method
 description: Choose an Unpackerr install method.
 ---
 
+Coming from 0.16 or earlier? Read [Upgrading to v1](/docs/install/upgrading) before you
+pull a new image or package.
+
 We recommend installing Unpackerr the same way you installed your
 Starr or download apps. If your existing infrastructure exists in Docker,
 then Unpackerr should probably live in Docker too.
