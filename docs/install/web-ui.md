@@ -212,6 +212,8 @@ non-proxy IP.
 Login uses the UI user. Prometheus and scripts use an API key
 (`X-Api-Key` or `Authorization: Bearer`). Create keys under **Settings → Web
 server**. Scrapes of `/metrics` need a key with `system:metrics:read`.
+`GET /api/stats` needs `system:stats:read`. A [Homepage](/docs/howto/homepage)
+widget reads that endpoint.
 
 Need a hand? [Go Lift Discord](https://golift.io/discord) or
 [GitHub issues](https://github.com/Unpackerr/unpackerr/issues/new).

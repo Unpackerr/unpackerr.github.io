@@ -17,7 +17,15 @@ const sidebars = {
     'install/configuration',
     'unpackerr/faq',
     'unpackerr/troubleshooting',
-    'unpackerr/download-clients',
+    {
+      type: 'category',
+      label: 'How-to',
+      collapsed: true,
+      items: [
+        'howto/homepage',
+        'howto/download-clients',
+      ],
+    },
     {
       type: 'category',
       label: 'xt',

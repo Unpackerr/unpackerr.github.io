@@ -41,7 +41,9 @@ elif [ "$ARCH" = "armv7l" ]; then
 fi
 
 # Construct the download URL.
-URL=$(curl -s https://api.github.com/repos/Unpackerr/unpackerr/releases/latest |   grep -e "browser_download_url.*linux_$ARCH"| cut -d '"' -f 4)
+URL=$(curl -s https://api.github.com/repos/Unpackerr/unpackerr/releases/latest |
+  grep -e "browser_download_url.*linux_$ARCH" |
+  cut -d '"' -f 4)
 
 # Download and extract the binary and the example config file.
 mkdir -p $HOME/unpackerr
