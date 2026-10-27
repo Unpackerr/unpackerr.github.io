@@ -5,4 +5,4 @@ unlisted: true
 description: Moved to Download Clients.
 ---
 
-This page moved to [Download Clients](/docs/unpackerr/download-clients).
+This page moved to [Download Clients](/docs/howto/download-clients).
