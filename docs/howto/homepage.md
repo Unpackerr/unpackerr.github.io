@@ -80,7 +80,7 @@ widget default.
 | `deleted` | Deleted, or a delete still running. |
 | `failed` | Extract failed, or delete failed. |
 
-Items with nothing to extract are left out of these counts.
+Completed Starr downloads with no extractable files can remain in `waiting`.
 
 `finished` and `retries` keep climbing for the life of the process.
 `finished` goes up when a deleted item ages out of history, and when you
@@ -110,8 +110,10 @@ uses a dot, such as `stackXtractr.len`.
 | `stackDel` | File deletes. |
 | `stackTask` | Config apply and queue actions. |
 
-`starrQueues` is one object per configured Starr app, in Settings order.
-`starrQueues.0` is the first app. Each object has `app`, `name`, `url`,
+`starrQueues` contains one object per configured Starr app instance, ordered
+by app (Lidarr, Radarr, Readarr, Sonarr), then by sorted instance key.
+Check each entry's `app` and `name` before selecting its zero-based index.
+Each object has `app`, `name`, `url`,
 `queued`, `retrieved`, `complete`, `match`, `issues`, `downloading`,
 `updatedAt`, and `error`. `queued` on that object is the Starr activity
 queue. Unpackerr's own `queued` count is the table above.
