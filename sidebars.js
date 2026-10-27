@@ -14,6 +14,12 @@ const sidebars = {
       ],
     },
     'install/web-ui',
+    {
+      type: 'category',
+      label: 'How-to',
+      collapsed: false,
+      items: ['howto/homepage'],
+    },
     'install/configuration',
     'unpackerr/faq',
     'unpackerr/troubleshooting',
