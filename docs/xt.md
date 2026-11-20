@@ -6,7 +6,13 @@ description: Recursively decompress archives with the xt command-line tool.
 
 `xt` is a one-shot command-line extractor built on the same
 [xtractr](https://github.com/golift/xtractr) engine as Unpackerr.
-Give it files or folders; it recursively decompresses archives it finds.
+Give it files or folders. A folder is searched, including its sub folders.
+`--max-depth` and `--min-depth` limit that search. `--recurse` is not used for it.
+
+An archive inside an archive stays packed. `--recurse` extracts those once,
+in a second pass, and that pass does not repeat.
+Example: pass 1 extracts `bundle.zip` and writes `disc.img.zst`;
+pass 2 extracts that and writes `disc.img`; `disc.img` stays packed until you run `xt` on it.
 
 It is not a daemon and it does not poll Starr apps. Use Unpackerr when you want
 ongoing queue or folder watching. Use `xt` when you want to extract a path now.
@@ -62,7 +68,8 @@ Paths may be files to extract or directories to search.
 | --- | --- |
 | `-o`, `--output` | Directory to write extracted files. Default: current directory. |
 | `-S`, `--squash-root` | If the archive root is a single folder, move its contents up. |
-| `-d`, `--max-depth` | How deep to recurse. `0` is unlimited; `1` disables recursion. |
+| `-r`, `--recurse` | One extra pass over archives just extracted. Not used for the folder search. |
+| `-d`, `--max-depth` | Folder search depth. `0` is unlimited. `1` searches the path and one level of sub folders. |
 | `-m`, `--min-depth` | Only extract archives this many subdirectories deep or deeper. |
 | `-P`, `--password` | Password for encrypted RAR/7z. Repeat the flag for more passwords. |
 | `-e`, `--extension` | Only extract these extensions (include the leading dot). Repeatable. |
@@ -97,6 +104,7 @@ min_depth = 1
 file_mode = 644
 dir_mode  = 755
 squash_root = false
+recurse = false
 verbose   = false
 debug_log = false
 preserve_paths = false
